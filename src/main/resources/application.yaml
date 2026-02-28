@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: fd-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fountlinedigital
+    username: postgres
+    password: Miamifl#12
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  spring:
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+app:
+  seed:
+    enabled: false
+    admins: 10
+    employees: 200
+    clients: 150
+    inventory: 200
