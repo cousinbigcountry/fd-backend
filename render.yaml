@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: fd-backend
+    env: docker
+    plan: free
+    autoDeploy: true
+
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: fd-db
+          property: connectionString
+
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: fd-db
+          property: user
+
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: fd-db
+          property: password
+
+databases:
+  - name: fd-db
+    plan: free
+    databaseName: fountlinedigital
+    user: postgres
