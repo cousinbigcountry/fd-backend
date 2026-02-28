@@ -6,9 +6,9 @@ spring:
     name: fd-backend
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/fountlinedigital
-    username: postgres
-    password: Miamifl#12
+    url: jdbc:postgresql://fountlinedigital_user:khqiRCYepraQvroMAq9qX7JnizPCIhs8@dpg-d6h5dpvgi27c73fjun10-a/fountlinedigital
+    username: fountlinedigital_user
+    password: khqiRCYepraQvroMAq9qX7JnizPCIhs8
     driver-class-name: org.postgresql.Driver
 
   jpa:

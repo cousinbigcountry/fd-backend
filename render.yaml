@@ -13,21 +13,21 @@ services:
 
       - key: SPRING_DATASOURCE_URL
         fromDatabase:
-          name: fd-db
+          name: postgresql://fountlinedigital_user:khqiRCYepraQvroMAq9qX7JnizPCIhs8@dpg-d6h5dpvgi27c73fjun10-a/fountlinedigital
           property: connectionString
 
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
-          name: fd-db
+          name: fountlinedigital_user
           property: user
 
       - key: SPRING_DATASOURCE_PASSWORD
         fromDatabase:
-          name: fd-db
+          name: khqiRCYepraQvroMAq9qX7JnizPCIhs8
           property: password
 
 databases:
-  - name: fd-db
+  - name: fountlinedigital
     plan: free
     databaseName: fountlinedigital
-    user: postgres
+    user: fountlinedigital_user
