@@ -1,6 +1,7 @@
 services:
   - type: web
     name: fd-backend
+    runtime: java
     buildCommand: ./mvnw clean install
     startCommand: java -jar target/backend1.jar
     plan: free
